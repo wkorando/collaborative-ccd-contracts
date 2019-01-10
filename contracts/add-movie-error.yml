@@ -1,0 +1,17 @@
+description: Example of attempt to add a new movie failing due to client errors
+request:
+  method: POST
+  url: /api/v1/movies
+  body:
+    movieName: "Turn and Hooch"
+    genre: "Comedy"
+    releaseYear: 1988
+    runtime: "1OO"
+  headers:
+    Content-Type: application/json
+response:
+  status: 400
+  body:
+    errorMessages: ["Runtime must be numeric"]
+  headers:
+    Content-Type: application/json;charset=UTF-8
